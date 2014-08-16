@@ -1,4 +1,4 @@
-#!/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/bin/ruby
+#!/usr/bin/env /Users/claudiob/.rbenv/shims/ruby
 
 # Usage: redcarpet [<file>...]
 # Convert one or more Markdown files to HTML and write to standard output. With
@@ -23,14 +23,11 @@ rescue LoadError
   </style>
 
   <div class="error">
-  <h2>Please install the following gems on your system Ruby</h2>
+  <h2>Please install the following gems on your Ruby #{RUBY_VERSION}</h2>
 
   <pre><code>
-  unset GEM_HOME
-  unset GEM_PATH
-
-  sudo /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/bin/gem install redcarpet -v 2.3.0
-  sudo /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/bin/gem install pygments.rb
+  gem install redcarpet -v 2.3.0
+  gem install pygments.rb
   </code></pre>
 
   </div>

@@ -12,9 +12,9 @@ if [[ -f "$TM_FILEPATH" ]]; then
   echo "&lt;base href='file://${TM_FILEPATH// /%20}'&gt;"
 fi
 
-# Convert to html then make one of the html tags above caret 
+# Convert to html then make one of the html tags above caret
 # into a link that we scroll down to
-"${TM_MARKDOWN:-redcarpet.rb}"|"${TM_SMARTYPANTS:-SmartyPants.pl}"|ruby -e '
+"${TM_RUBY:=ruby}" -- "${TM_BUNDLE_SUPPORT}/bin/${TM_MARKDOWN:-redcarpet.rb}"|"${TM_SMARTYPANTS:-SmartyPants.pl}"|ruby -e '
 lines = STDIN.read.split("\n")
 n = [ENV["TM_LINE_NUMBER"].to_i, lines.length].min - 7
 
@@ -39,7 +39,7 @@ html_footer</string>
 	<key>output</key>
 	<string>showAsHTML</string>
 	<key>scope</key>
-	<string>text.html.markdown.redcarpet</string>
+	<string>text.html.markdown</string>
 	<key>uuid</key>
 	<string>A2B854C4-044E-44A6-B28B-5CADA571F780</string>
 </dict>

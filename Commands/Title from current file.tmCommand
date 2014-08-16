@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>command</key>
-	<string>#!/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/bin/ruby -wKU
+	<string>#!/usr/bin/env ruby -wKU
 title = ENV['TM_FILENAME'].split('.').first
 title.gsub!(/[\-_]([a-zA-Z])/, ' \1')
 title.gsub!(/([a-z])([A-Z])/, '\1 \2')
